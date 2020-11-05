@@ -55,6 +55,7 @@ namespace Docks
                 RightDock.Items.Add(i + ":");
             }
             LoadFromFile();
+            UpdateStatusWindow();
         }
 
         private void NextDayButton_Click(object sender, RoutedEventArgs e)
