@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -34,6 +35,7 @@ namespace Docks
         int dayNumber = 1;
         int totalRejects = 0;
         int dailyRejects;
+        
 
         public MainWindow()
         {
@@ -43,6 +45,10 @@ namespace Docks
 
         void SetUp()
         {
+            LeftDock.Items.Clear();
+            RightDock.Items.Clear();
+            LeftDock.Background = System.Windows.Media.Brushes.LightGray;
+            RightDock.Background = System.Windows.Media.Brushes.LightGray;
             for (int i = 1; i <= 32; i++)
             {
                 LeftDock.Items.Add(i + ":");
@@ -84,7 +90,7 @@ namespace Docks
 
         void LoadFromFile()
         {
-            //Index,Name,Size,Weight,MaxSpeed,SpecialTrait,DockedDays
+            //Index:Name:Size:Weight:MaxSpeed:SpecialTrait:DockedDays
 
             try
             {
@@ -98,7 +104,7 @@ namespace Docks
                     {
                         break;
                     }
-                    string[] boatInfo = text.Split(",");
+                    string[] boatInfo = text.Split(":");
 
                     int index = int.Parse(boatInfo[0]);
                     string name = boatInfo[1];
@@ -183,7 +189,7 @@ namespace Docks
                     {
                         break;
                     }
-                    string[] boatInfo = text.Split(",");
+                    string[] boatInfo = text.Split(":");
 
                     int index = int.Parse(boatInfo[0]);
                     string name = boatInfo[1];
@@ -262,17 +268,17 @@ namespace Docks
             StreamWriter lsw = new StreamWriter("LeftDock.txt",false);
             StreamWriter rsw = new StreamWriter("RightDock.txt", false);
 
-            //Index,Name,Size,Weight,MaxSpeed,SpecialTrait,DockedDays
+            //Index:Name:Size:Weight:MaxSpeed:SpecialTrait:DockedDays
 
             foreach (Boat boat in LeftDockList)
             {
                 int index = LeftDock.Items.IndexOf(boat);
-                lsw.Write(index + "," + boat.saveData() + "\n");
+                lsw.Write(index + ":" + boat.saveData() + "\n");
             }
             foreach (Boat boat in RightDockList)
             {
                 int index = RightDock.Items.IndexOf(boat);
-                rsw.Write(index + "," + boat.saveData() + "\n");
+                rsw.Write(index + ":" + boat.saveData() + "\n");
             }
 
             lsw.Close();
@@ -693,9 +699,17 @@ namespace Docks
             {
                 LeftDock.Items.RemoveAt(i);
             }
-            for (int j = 0; j < size*2; j++)
+            LeftDock.Items.Insert(i, boat);
+            for (int j = 1; j < size*2; j++)
             {
-                LeftDock.Items.Insert(i+j, boat);
+                if (j == size*2 - 1)
+                {
+                    LeftDock.Items.Insert(i + j, "|____|");
+                }
+                else
+                {
+                    LeftDock.Items.Insert(i + j, "|      |");
+                }
             }       
         }
 
@@ -705,9 +719,17 @@ namespace Docks
             {
                 RightDock.Items.RemoveAt(i);
             }
-            for (int j = 0; j < size*2; j++)
+            RightDock.Items.Insert(i, boat);
+            for (int j = 1; j < size*2; j++)
             {
-                RightDock.Items.Insert(i+j, boat);
+                if (j == size * 2 - 1)
+                {
+                    RightDock.Items.Insert(i + j, "|____|");
+                }
+                else
+                {
+                    RightDock.Items.Insert(i + j, "|      |");
+                }
             }
         }
 
@@ -840,7 +862,7 @@ namespace Docks
 
         public override string saveData()
         {
-            return this.Name + "," + this.Size + "," + this.Weight + "," + this.MaxSpeed + "," + this.MaxPassenger + "," + this.DockedDays;
+            return this.Name + ":" + this.Size + ":" + this.Weight + ":" + this.MaxSpeed + ":" + this.MaxPassenger + ":" + this.DockedDays;
         }
 
     }
@@ -868,7 +890,7 @@ namespace Docks
 
         public override string saveData()
         {
-            return this.Name + "," + this.Size + "," + this.Weight + "," + this.MaxSpeed + "," + this.HorsePower + "," + this.DockedDays;
+            return this.Name + ":" + this.Size + ":" + this.Weight + ":" + this.MaxSpeed + ":" + this.HorsePower + ":" + this.DockedDays;
         }
     }
 
@@ -895,7 +917,7 @@ namespace Docks
 
         public override string saveData()
         {
-            return this.Name + "," + this.Size + "," + this.Weight + "," + this.MaxSpeed + "," + this.Length + "," + this.DockedDays;
+            return this.Name + ":" + this.Size + ":" + this.Weight + ":" + this.MaxSpeed + ":" + this.Length + ":" + this.DockedDays;
         }
     }
 
@@ -922,7 +944,7 @@ namespace Docks
 
         public override string saveData()
         {
-            return this.Name + "," + this.Size + "," + this.Weight + "," + this.MaxSpeed + "," + this.Cargo + "," + this.DockedDays;
+            return this.Name + ":" + this.Size + ":" + this.Weight + ":" + this.MaxSpeed + ":" + this.Cargo + ":" + this.DockedDays;
         }
 
     }
@@ -952,7 +974,7 @@ namespace Docks
 
         public override string saveData()
         {
-            return this.Name + "," + this.Size + "," + this.Weight + "," + this.MaxSpeed + "," + this.Bedspaces + "," + this.DockedDays;
+            return this.Name + ":" + this.Size + ":" + this.Weight + ":" + this.MaxSpeed + ":" + this.Bedspaces + ":" + this.DockedDays;
         }
 
     }

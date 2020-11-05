@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fsqBPIInzzSobC8bEocQ0B9A/pQmQlgokw3TxsQ8n7a1lgwvlZt4maonzJGVYGCn/lgOiLViayTW+qlSJ+GpiA==",
+  "dgSpecHash": "2+2LrhdM4S64hwyZtB78sY9Q9WvrtMcCyX+MLznVtl/pJs0JtTusx8U9e6P3jw10M9y/DmItLL7yk71v+HWthA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Erik\\source\\repos\\Docks\\Docks\\Docks.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

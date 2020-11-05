@@ -13,7 +13,7 @@ C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.g.resources
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.AssemblyInfoInputs.cache
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.AssemblyInfo.cs
-C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.csproj.CoreCompileInputs.cache
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.dll
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.pdb
 C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.genruntimeconfig.cache
+C:\Users\Erik\source\repos\Docks\Docks\obj\Debug\netcoreapp3.1\Docks.csproj.CoreCompileInputs.cache

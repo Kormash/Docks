@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Docks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1700">
-    <Grid Margin="0,0,-85,-84" RenderTransformOrigin="0.600,0.600">
+        Title="MainWindow" Height="1100" Width="1700">
+    <Grid Margin="0,0,0,0" RenderTransformOrigin="0,0">
         <TextBox Height="22" HorizontalAlignment="Left" Margin="470,554,0,0" Name="NumberOfBoats" VerticalAlignment="Top" Width="128" />
         <ListBox Height="113" HorizontalAlignment="Left" Margin="400,408,0,0" Name="RejectWindow" VerticalAlignment="Top" Width="268" ></ListBox>
         <Button Height="23" Margin="496,581,0,0" Name="NextDayButton" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="NextDayButton_Click" RenderTransformOrigin="0.759,-0.283">Next Day</Button>
-        <ListBox Margin="170,28,0,0" Name="LeftDock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="950" RenderTransformOrigin="0.489,0.508"></ListBox>
-        <ListBox Margin="692,28,0,0" Name="RightDock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="950" RenderTransformOrigin="1.439,1.002"></ListBox>
+        <ListView Margin="170,0,0,0" Name="LeftDock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="930" RenderTransformOrigin="0.489,0.508" FontSize="9" FontFamily="Arial Black" />
+        <ListView Margin="692,0,0,0" Name="RightDock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="930" RenderTransformOrigin="1.439,1.002" FontSize="9" FontFamily="Arial Black" />
         <ListBox Margin="934,58,0,0" Name="StatusWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="715" Height="700" RenderTransformOrigin="1.439,1.002"></ListBox>
 
     </Grid>
