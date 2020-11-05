@@ -45,8 +45,6 @@ namespace Docks
 
         void SetUp()
         {
-            LeftDock.Items.Clear();
-            RightDock.Items.Clear();
             LeftDock.Background = System.Windows.Media.Brushes.LightGray;
             RightDock.Background = System.Windows.Media.Brushes.LightGray;
             for (int i = 1; i <= 32; i++)
@@ -480,7 +478,6 @@ namespace Docks
                 i++;
             }
         }
-
         void DockTwo(Boat boat)
         {
             //Starts with Bot Right -> Top Right, then Bot Left-> Top Left
@@ -524,7 +521,6 @@ namespace Docks
                 i--;
             }
         }
-
         void DockThree(Boat boat)
         {
             //Starts with Top Right -> Bot Right then Top Left -> Bot Right
@@ -568,7 +564,6 @@ namespace Docks
                 i++;
             }
         }
-
         void DockFour(Boat boat)
         {
             //Starts with Bot Right -> Top Right, then Bot Left-> Top Left
@@ -612,7 +607,6 @@ namespace Docks
                 i--;
             }
         }
-
         void DockHalf(Boat boat)
         {
             bool docked = false;
